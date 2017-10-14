@@ -19,6 +19,7 @@ import org.simplejavamail.email.Email;
 import org.simplejavamail.email.EmailBuilder;
 import org.simplejavamail.mailer.Mailer;
 import org.simplejavamail.mailer.config.TransportStrategy;
+import testutil.ConfigLoaderTestHelper;
 
 /**
  *
@@ -43,9 +44,10 @@ public class Main {
         
         //new Mailer().sendMail(email);
         try {
-            GmailTLS25(email, properties);
+            ConfigLoaderTestHelper.clearConfigProperties();
+            GmailTLS587(email, properties);
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.err.println("exception: "+e.getMessage());
         }
         
         
@@ -53,6 +55,7 @@ public class Main {
     }
     
     public static void GmailTLS25(Email email, String[][] properties) {
+        
         new Mailer("smtp.gmail.com", 25, properties[0][1], properties[1][1], TransportStrategy.SMTP_TLS).sendMail(email);
         
     }

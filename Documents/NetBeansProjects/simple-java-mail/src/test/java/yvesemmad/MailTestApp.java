@@ -21,11 +21,11 @@ import static javax.xml.bind.DatatypeConverter.parseBase64Binary;
 @SuppressWarnings({ "WeakerAccess", "UnusedAssignment" })
 public class MailTestApp {
 
-	private static final String YOUR_GMAIL_ADDRESS = "your_gmail_user@gmail.com";
+	private static final String YOUR_GMAIL_ADDRESS = "yvesdiby3dev@gmail.com";
 
 	// if you have 2-factor login turned on, you need to generate a once-per app password
 	// https://security.google.com/settings/security/apppasswords
-	private static final String YOUR_GMAIL_PASSWORD = "your_gmail_password";
+	private static final String YOUR_GMAIL_PASSWORD = "1551992y";
 
 	private static final ServerConfig serverConfigSMTP = new ServerConfig("smtp.gmail.com", 25, YOUR_GMAIL_ADDRESS, YOUR_GMAIL_PASSWORD);
 	private static final ServerConfig serverConfigTLS = new ServerConfig("smtp.gmail.com", 587, YOUR_GMAIL_ADDRESS, YOUR_GMAIL_PASSWORD);
