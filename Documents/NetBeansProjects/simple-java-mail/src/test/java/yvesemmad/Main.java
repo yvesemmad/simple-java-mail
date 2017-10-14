@@ -15,6 +15,7 @@
  */
 package yvesemmad;
 
+import java.util.ArrayList;
 import org.simplejavamail.email.Email;
 import org.simplejavamail.email.EmailBuilder;
 import org.simplejavamail.mailer.Mailer;
@@ -30,10 +31,12 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // TODO code application logic here
+        ConfigLoaderTestHelper.clearConfigProperties();
+        ArrayList<String> as = new ArrayList<String>();
         String properties[][] = {{"user","yvesdiby3dev@gmail.com"},{"password","1551992y"}};
-        
+            
         Email email = new EmailBuilder()
         .from("yvesemmad", "yvesdiby3dev@gmail.com")
         .to("Yves Emmanuel", "yvesemmanueld@gmail.com")
@@ -44,7 +47,6 @@ public class Main {
         
         //new Mailer().sendMail(email);
         try {
-            ConfigLoaderTestHelper.clearConfigProperties();
             GmailTLS587(email, properties);
         } catch (Exception e) {
             System.err.println("exception: "+e.getMessage());

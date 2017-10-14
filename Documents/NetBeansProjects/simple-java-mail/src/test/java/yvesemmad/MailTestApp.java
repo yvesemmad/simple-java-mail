@@ -22,6 +22,7 @@ import static javax.xml.bind.DatatypeConverter.parseBase64Binary;
 public class MailTestApp {
 
 	private static final String YOUR_GMAIL_ADDRESS = "yvesdiby3dev@gmail.com";
+        private static final String RECIPIENT_GMAIL_ADDRESS = "yvesemmanueld@gmail.com";
 
 	// if you have 2-factor login turned on, you need to generate a once-per app password
 	// https://security.google.com/settings/security/apppasswords
@@ -42,9 +43,9 @@ public class MailTestApp {
 		ConfigLoaderTestHelper.clearConfigProperties();
 
 		final Email emailNormal = new Email();
-		emailNormal.setFromAddress("lollypop", "lol.pop@somemail.com");
+		emailNormal.setFromAddress("3DEV", YOUR_GMAIL_ADDRESS);
 		// don't forget to add your own address here ->
-		emailNormal.addNamedToRecipients("C.Cane", YOUR_GMAIL_ADDRESS);
+		emailNormal.addNamedToRecipients("Y. Emma", RECIPIENT_GMAIL_ADDRESS);
 		emailNormal.setText("We should meet up!");
 		emailNormal.setTextHTML("<b>We should meet up!</b><img src='cid:thumbsup'>");
 		emailNormal.setSubject("hey");
